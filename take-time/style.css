@@ -1,0 +1,872 @@
+/* ==========================================================================
+   Take Time Module Styles
+   ========================================================================== */
+
+.tt-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.chapter-pills-container {
+  display: flex;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding: 0.35rem 0.2rem 0.65rem 0.2rem;
+  margin-bottom: 0.85rem;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  scrollbar-width: none; /* Ẩn scrollbar thô */
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chapter-pills-container::-webkit-scrollbar {
+  display: none; /* Ẩn scrollbar trên Chrome/Safari/Edge */
+}
+
+.chapter-pills-container:active {
+  cursor: grabbing;
+}
+
+.chapter-pill {
+  flex-shrink: 0;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  min-width: 54px;
+  justify-content: center;
+  text-align: center;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.chapter-pill:hover {
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.chapter-pill.active {
+  background: rgba(245, 158, 11, 0.22);
+  border-color: var(--accent-gold);
+  color: var(--accent-sun);
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.25);
+}
+
+.chapter-pill.special {
+  border-color: rgba(129, 140, 248, 0.4);
+  color: #c7d2fe;
+}
+.chapter-pill.special.active {
+  background: rgba(129, 140, 248, 0.25);
+  border-color: #818cf8;
+  color: #ffffff;
+}
+
+/* Level Grid inside Active Chapter */
+.level-selector-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.level-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  padding: 0.6rem 0.2rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.level-btn .star-indicator {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.level-btn.completed {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.1);
+}
+.level-btn.completed .star-indicator {
+  color: #10b981;
+}
+
+.level-btn.active {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+  color: #0b0f19;
+  border-color: #f59e0b;
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+.level-btn.active .star-indicator {
+  color: #0b0f19;
+}
+
+/* Board Viewer Container */
+.board-viewer-card {
+  background: #060911;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.board-viewer-header {
+  padding: 0.75rem 1rem;
+  background: rgba(19, 27, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.current-board-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.board-badge-lg {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--accent-sun);
+  background: rgba(245, 158, 11, 0.15);
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.board-actions-bar {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.board-stage {
+  min-height: 380px;
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: 
+    radial-gradient(circle at center, rgba(30, 41, 65, 0.4) 0%, #060911 80%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 20px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 20px);
+  padding: 1rem;
+  user-select: none;
+}
+
+.board-image-wrapper {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.board-image {
+  max-width: 100%;
+  max-height: 480px;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-full);
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
+  pointer-events: auto;
+}
+
+/* Rotation Badge Overlay */
+.rotation-indicator-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: var(--accent-sun);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: none;
+  align-items: center;
+  gap: 0.3rem;
+  z-index: 10;
+}
+
+/* Floating Controls (Zoom, Pan, Rotate) */
+.board-floating-controls {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  gap: 0.4rem;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  z-index: 10;
+}
+
+.control-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover, .control-btn:active {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--accent-sun);
+}
+
+/* Chapter 8 Rotate Action Box */
+.chapter8-rotation-box {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px dashed rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rotate-btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-rotate {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-sun);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+}
+.btn-rotate:hover, .btn-rotate:active {
+  background: var(--accent-gold);
+  color: #0b0f19;
+}
+
+/* Board Footer Controls */
+.board-viewer-footer {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.completion-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.completion-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent-emerald);
+  cursor: pointer;
+}
+
+.star-rating-box {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.star-btn:hover {
+  transform: scale(1.2);
+}
+.star-btn.filled {
+  color: #fbbf24;
+}
+
+/* Sleeve Card Preview Box */
+.sleeve-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sleeve-thumb {
+  width: 90px;
+  height: 125px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.sleeve-thumb:hover {
+  transform: scale(1.04);
+}
+
+.sleeve-info {
+  flex-grow: 1;
+}
+
+.sleeve-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-sun);
+  margin-bottom: 0.25rem;
+}
+
+.sleeve-desc {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+/* Modifiers Grid */
+.modifier-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .modifier-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.modifier-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.modifier-card:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modifier-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modifier-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.modifier-desc {
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  line-height: 1.35;
+}
+
+/* Deck Guide Card */
+.deck-guide-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.deck-guide-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-sun);
+}
+
+.deck-split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .deck-split-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.deck-box-item {
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+}
+.deck-box-item.solar {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.deck-box-item.lunar {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.deck-box-header {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.solar .deck-box-header { color: #f87171; }
+.lunar .deck-box-header { color: #a5b4fc; }
+
+.deck-box-content {
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  line-height: 1.4;
+}
+
+.player-count-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.player-count-table th, .player-count-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-glass);
+}
+.player-count-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Flip Card Modal Component */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 380px;
+  perspective: 1000px;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-md);
+}
+
+.flip-card-front img, .flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* ==========================================================================
+   Leaflet Viewer Styles
+   ========================================================================== */
+
+.leaflet-badge-page {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-sun);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-full);
+}
+
+.leaflet-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.leaflet-nav-bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+}
+
+.leaflet-nav-btn {
+  font-size: 0.8rem;
+  padding: 0.45rem 0.85rem;
+  white-space: nowrap;
+}
+
+.leaflet-quick-select-wrap {
+  flex: 1;
+  max-width: 320px;
+  margin: 0 0.5rem;
+}
+
+.leaflet-select-dropdown {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.leaflet-select-dropdown:focus {
+  border-color: var(--accent-sun);
+}
+
+.leaflet-viewer-card {
+  background: #040711;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.leaflet-viewer-card.in-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  border-radius: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.leaflet-viewer-card.in-fullscreen .leaflet-stage {
+  flex: 1;
+  height: calc(100vh - 105px);
+}
+
+.leaflet-stage {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  background: radial-gradient(circle at center, #10192e 0%, #050813 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  touch-action: none;
+  cursor: grab;
+}
+
+@media (min-width: 768px) {
+  .leaflet-stage {
+    height: 540px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leaflet-stage {
+    height: 620px;
+  }
+}
+
+.leaflet-image-wrapper {
+  position: relative;
+  width: 95%;
+  height: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.leaflet-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.8));
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.leaflet-stage-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 42px;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  opacity: 0.65;
+}
+
+.leaflet-stage-arrow:hover {
+  opacity: 1;
+  background: rgba(245, 158, 11, 0.3);
+  border-color: var(--accent-gold);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.arrow-left {
+  left: 12px;
+}
+
+.arrow-right {
+  right: 12px;
+}
+
+.leaflet-stage-footer {
+  padding: 0.6rem 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  border-top: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.leaflet-zoom-indicator {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-sun);
+  background: rgba(245, 158, 11, 0.15);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.leaflet-loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-sun);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 5;
+}
+
+.leaflet-loading-spinner .spinner-icon {
+  font-size: 2rem;
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.leaflet-info-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.leaflet-info-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-sun);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.leaflet-info-desc {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.leaflet-info-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.leaflet-rule-item {
+  background: rgba(15, 23, 42, 0.6);
+  border-left: 3px solid var(--accent-sun);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.leaflet-rule-item .rule-badge {
+  color: #fbbf24;
+  font-size: 0.82rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.leaflet-rule-item .rule-text {
+  color: var(--text-main);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0;
+}
+

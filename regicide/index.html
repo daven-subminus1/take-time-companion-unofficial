@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Regicide - Boss Companion</title>
+  <meta name="description" content="Trợ lý kỹ thuật số đánh 12 Boss trong game bài Regicide với 1 bộ bài Tây.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../shared/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Top Header -->
+    <header class="app-header">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-icon" style="background:linear-gradient(135deg, #ef4444, #991b1b);">👑</div>
+        <div>
+          <div class="brand-title">Regicide</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-tabs-desktop">
+        <a href="../index.html" class="tab-btn">
+          <span>🏠</span> Trang Chủ
+        </a>
+        <a href="../take-time/index.html" class="tab-btn">
+          <span>⏱️</span> Take Time
+        </a>
+        <a href="index.html" class="tab-btn active">
+          <span>👑</span> Regicide
+        </a>
+        <a href="../nana/index.html" class="tab-btn">
+          <span>🐱</span> Nana (Trio)
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="openModal('regRulesModal')" title="Xem luật chơi">
+          📖
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 1rem;">
+      
+      <div style="margin-bottom: 1.25rem;">
+        <h1 class="section-title" style="color:#f87171;">
+          <span>⚔️</span> Đấu Trường 12 Vị Vua (Regicide)
+        </h1>
+        <p class="section-subtitle">Bảng tính sát thương và đếm máu Boss thời gian thực</p>
+      </div>
+
+      <!-- Boss Status Card -->
+      <div class="regicide-boss-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h2 style="font-family:var(--font-display); font-size:1.35rem; color:#fca5a5;" id="regBossName">
+            Jack (J) (Hearts ♥)
+          </h2>
+          <span style="font-size:0.85rem; color:var(--text-muted);">
+            Tiến độ: <strong id="regDefeatedCount" style="color:var(--text-main);">0 / 12</strong>
+          </span>
+        </div>
+
+        <div class="boss-hp-bar">
+          <div id="regBossHPBar" class="boss-hp-fill"></div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:1rem;">
+          <span>Máu Boss: <strong id="regBossHP" style="color:#ef4444;">20 / 20</strong></span>
+          <span>Sát thương Boss đánh trả: <strong id="regBossATK" style="color:#f59e0b;">10</strong></span>
+        </div>
+
+        <!-- Damage Buttons -->
+        <div class="boss-controls">
+          <button class="btn-primary" onclick="damageBoss(1)">-1 HP</button>
+          <button class="btn-primary" onclick="damageBoss(2)">-2 HP</button>
+          <button class="btn-primary" onclick="damageBoss(3)">-3 HP</button>
+          <button class="btn-primary" onclick="damageBoss(4)">-4 HP</button>
+          <button class="btn-primary" onclick="damageBoss(5)">-5 HP</button>
+          <button class="btn-primary" onclick="damageBoss(6)">-6 HP</button>
+          <button class="btn-primary" onclick="damageBoss(8)">-8 HP</button>
+          <button class="btn-primary" onclick="damageBoss(10)">-10 HP</button>
+        </div>
+
+        <!-- Extra Shield & Action Row -->
+        <div class="boss-actions-row">
+          <button class="btn-secondary" style="flex:1;" onclick="addShield(2)">🛡️ +2 Khiên</button>
+          <button class="btn-secondary" style="flex:1;" onclick="addShield(4)">🛡️ +4 Khiên</button>
+          <button class="btn-primary" style="flex:1.5;" onclick="nextBoss()">Boss Tiếp Theo ➔</button>
+          <button class="btn-secondary" onclick="resetRegicide()" title="Bắt đầu lại">⟲</button>
+        </div>
+
+        <!-- Suit Powers Grid -->
+        <div class="suit-powers-grid">
+          <div class="suit-card">
+            <div class="suit-name" style="color:#f87171;">♥ Cơ (Hearts) - Hồi máu</div>
+            <div class="suit-desc">Xào lại số lá bài tương ứng từ cọc bài bỏ vào đáy cọc bài rút (Tavern Deck).</div>
+          </div>
+          <div class="suit-card">
+            <div class="suit-name" style="color:#f87171;">♦ Rô (Diamonds) - Rút bài</div>
+            <div class="suit-desc">Tất cả người chơi rút thêm bài từ Tavern Deck chia đều theo thứ tự lượt.</div>
+          </div>
+          <div class="suit-card">
+            <div class="suit-name" style="color:#a5b4fc;">♣ Chuồn (Clubs) - x2 Damage</div>
+            <div class="suit-desc">Gây gấp đôi điểm sát thương của lá bài đánh ra lên Boss hiện tại.</div>
+          </div>
+          <div class="suit-card">
+            <div class="suit-name" style="color:#a5b4fc;">♠ Bích (Spades) - Khiên thủ</div>
+            <div class="suit-desc">Giảm lượng sát thương Boss đánh trả bằng với số điểm của lá bài.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Preparation Card -->
+      <section style="background:var(--bg-card); border:1px solid var(--border-glass); border-radius:var(--radius-lg); padding:1.25rem; margin-top:1.5rem;">
+        <h3 style="font-family:var(--font-display); font-size:1.1rem; color:var(--accent-sun); margin-bottom:0.75rem;">
+          🃏 Chuẩn bị bộ bài Tây cho Regicide
+        </h3>
+        <ul style="font-size:0.85rem; color:var(--text-sub); line-height:1.6; margin-left:1.2rem;">
+          <li><strong>Cọc Castle (12 Boss)</strong>: Tách riêng 4 lá Jack, 4 lá Queen, 4 lá King. Xếp 4 King ở dưới cùng, 4 Queen ở giữa, 4 Jack ở trên cùng.</li>
+          <li><strong>Cọc Tavern (Người chơi)</strong>: Toàn bộ lá bài từ Át (1) đến 10 của cả 4 chất.</li>
+          <li><strong>Jester (Joker)</strong>: Sử dụng 2 lá Joker để hủy miễn nhiễm của Boss hoặc đổi toàn bộ bài trên tay.</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+      <a href="../index.html" class="bnav-item">
+        <span class="bnav-icon">🏠</span>
+        <span>Trang Chủ</span>
+      </a>
+      <a href="../take-time/index.html" class="bnav-item">
+        <span class="bnav-icon">⏱️</span>
+        <span>Take Time</span>
+      </a>
+      <a href="index.html" class="bnav-item active">
+        <span class="bnav-icon">👑</span>
+        <span>Regicide</span>
+      </a>
+      <a href="../nana/index.html" class="bnav-item">
+        <span class="bnav-icon">🐱</span>
+        <span>Nana</span>
+      </a>
+    </nav>
+
+    <!-- Rules Modal -->
+    <div id="regRulesModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Luật Chơi Regicide</h3>
+          <button class="modal-close" onclick="closeModal('regRulesModal')">✕</button>
+        </div>
+        <div style="font-size:0.85rem; color:var(--text-sub); line-height:1.5;">
+          <p style="margin-bottom:0.75rem;">Regicide là game thẻ bài hợp tác 1-4 người đánh bại 12 vị vua chúa độc tài.</p>
+          <strong style="color:var(--accent-sun);">Thứ tự lượt chơi:</strong>
+          <ol style="margin-left:1.2rem; margin-top:0.4rem; margin-bottom:1rem;">
+            <li>Đánh 1 lá bài (hoặc combo lá Át) từ tay.</li>
+            <li>Kích hoạt sức mạnh chất bài nếu Boss không miễn nhiễm.</li>
+            <li>Gây sát thương lên Boss. Nếu máu Boss về 0, tiêu diệt Boss (nếu sát thương chuẩn khớp máu, Boss biến thành bài trên tay!).</li>
+            <li>Nếu Boss còn sống, Boss sẽ đánh trả. Người chơi phải bỏ bài trên tay có tổng giá trị bằng sát thương của Boss.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../shared/common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Solitaire Deck Companion Hub - Take Time, Regicide & Nana</title>
+  <meta name="description" content="Trang tổng hợp và trợ lý số cho các trò chơi bàn kết hợp Bộ Bài Tây và Điện Thoại: Take Time, Regicide, Nana.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared/style.css">
+  <style>
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.85));
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner::after {
+      content: '🃏';
+      position: absolute;
+      right: -10px;
+      bottom: -15px;
+      font-size: 5.5rem;
+      opacity: 0.12;
+      transform: rotate(-15deg);
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-sun);
+      background: rgba(245, 158, 11, 0.15);
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.5rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      line-height: 1.3;
+    }
+    .hero-desc {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.45;
+    }
+    .game-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .game-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .game-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-gold);
+      box-shadow: var(--shadow-md);
+    }
+    .game-card.highlight {
+      border-color: rgba(245, 158, 11, 0.4);
+      background: linear-gradient(145deg, rgba(30, 41, 65, 0.85), rgba(20, 28, 48, 0.75));
+    }
+    .game-card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-sun);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .game-card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .game-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .game-card-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .game-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Top Header -->
+    <header class="app-header">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">🃏</div>
+        <div>
+          <div class="brand-title">Deck Companion</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-tabs-desktop">
+        <a href="index.html" class="tab-btn active">
+          <span>🏠</span> Trang Chủ
+        </a>
+        <a href="take-time/index.html" class="tab-btn">
+          <span>⏱️</span> Take Time
+        </a>
+        <a href="regicide/index.html" class="tab-btn">
+          <span>👑</span> Regicide
+        </a>
+        <a href="nana/index.html" class="tab-btn">
+          <span>🐱</span> Nana (Trio)
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main Hub Page Content -->
+    <main style="padding: 1rem;">
+      
+      <div class="hero-banner">
+        <span class="hero-tag">🃏 Solitaire Deck Companion Hub</span>
+        <h1 class="hero-title">Chơi Board Game với 1 Bộ Bài Tây & Điện Thoại</h1>
+        <p class="hero-desc">
+          Biến điện thoại của bạn thành bảng điều khiển kỹ thuật số, xem mặt đồng hồ màn chơi, tính điểm và đếm máu Boss.
+        </p>
+      </div>
+
+      <div class="game-grid">
+        
+        <!-- Game 1: Take Time -->
+        <a href="take-time/index.html" class="game-card highlight">
+          <span class="game-card-badge">Đầy đủ 40 Màn Chơi</span>
+          <div class="game-card-icon">⏱️</div>
+          <div>
+            <h2 class="game-card-title">Take Time</h2>
+            <div class="game-card-meta">
+              <span>👥 1 - 4 người</span>
+              <span>⏳ 20 - 45 phút</span>
+              <span>🧩 Co-op / Giải đố</span>
+            </div>
+            <p class="game-card-desc">
+              12 chương và 40 mặt đồng hồ kỳ bí. Tích hợp <strong>Leaflet Luật 11 trang</strong>, hỗ trợ xoay mặt đồng hồ 60° (Chapter VIII), lật thẻ Sleeve 3D, quy đổi 24 lá bài Tây và lưu tiến trình.
+            </p>
+          </div>
+          <div style="display:flex; gap:0.5rem; width:100%; margin-top:0.25rem;">
+            <div class="btn-primary" style="flex:1; text-align:center;">
+              <span>Vào chơi</span> ➔
+            </div>
+            <a href="take-time/leaflet.html" class="btn-secondary" style="font-size:0.8rem; padding:0.45rem 0.75rem; text-decoration:none; display:inline-flex; align-items:center; gap:0.25rem;" onclick="event.stopPropagation();" title="Xem Leaflet">
+              📜 Leaflet
+            </a>
+          </div>
+        </a>
+
+        <!-- Game 2: Regicide -->
+        <a href="regicide/index.html" class="game-card">
+          <span class="game-card-badge" style="background:rgba(239,68,68,0.2); color:#fca5a5; border-color:rgba(239,68,68,0.3);">Boss Tracker</span>
+          <div class="game-card-icon">👑</div>
+          <div>
+            <h2 class="game-card-title">Regicide</h2>
+            <div class="game-card-meta">
+              <span>👥 1 - 4 người</span>
+              <span>⏳ 20 phút</span>
+              <span>⚔️ Đánh Boss</span>
+            </div>
+            <p class="game-card-desc">
+              Đồng lòng tiêu diệt 12 vị vua chúa độc tài. Bảng đếm máu Boss, tính damage, khiên phòng thủ và tra cứu sức mạnh 4 chất bài.
+            </p>
+          </div>
+          <div class="btn-secondary" style="width:100%;">
+            <span>Vào đấu trường Boss</span> ➔
+          </div>
+        </a>
+
+        <!-- Game 3: Nana (Trio) -->
+        <a href="nana/index.html" class="game-card">
+          <span class="game-card-badge" style="background:rgba(16,185,129,0.2); color:#6ee7b7; border-color:rgba(16,185,129,0.3);">Suy luận & Trí nhớ</span>
+          <div class="game-card-icon">🐱</div>
+          <div>
+            <h2 class="game-card-title">Nana (Trio)</h2>
+            <div class="game-card-meta">
+              <span>👥 2 - 6 người</span>
+              <span>⏳ 15 phút</span>
+              <span>🧠 Trí nhớ</span>
+            </div>
+            <p class="game-card-desc">
+              Thu thập 3 bộ ba lá cùng số hoặc bộ ba số 7 may mắn. Hướng dẫn lọc 36 lá từ bộ bài Tây và theo dõi chiến thắng nhanh chóng.
+            </p>
+          </div>
+          <div class="btn-secondary" style="width:100%;">
+            <span>Vào chơi Nana</span> ➔
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+      <a href="index.html" class="bnav-item active">
+        <span class="bnav-icon">🏠</span>
+        <span>Trang Chủ</span>
+      </a>
+      <a href="take-time/index.html" class="bnav-item">
+        <span class="bnav-icon">⏱️</span>
+        <span>Take Time</span>
+      </a>
+      <a href="regicide/index.html" class="bnav-item">
+        <span class="bnav-icon">👑</span>
+        <span>Regicide</span>
+      </a>
+      <a href="nana/index.html" class="bnav-item">
+        <span class="bnav-icon">🐱</span>
+        <span>Nana</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="shared/common.js"></script>
+</body>
+</html>
