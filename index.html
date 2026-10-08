@@ -21,71 +21,10 @@
 
 <body>
 
-  <div class="app-container">
+  <div class="app-container" style="padding-bottom: 2rem;">
 
-    <!-- Top Header -->
-    <header class="app-header">
-      <a href="index.html" class="brand-logo">
-        <div class="logo-icon">⏱️</div>
-        <div>
-          <div class="brand-title">Take Time</div>
-          <div style="font-size:0.65rem; color:var(--accent-sun); font-weight:700;">Digital Companion</div>
-        </div>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <nav class="nav-tabs-desktop">
-        <a href="index.html" class="tab-btn active">
-          <span>⏱️</span> Bàn Chơi
-        </a>
-        <a href="leaflet.html" class="tab-btn">
-          <span>📜</span> Leaflet Luật
-        </a>
-        <a href="#deckGuide" class="tab-btn">
-          <span>🃏</span> Chuẩn Bị Bài
-        </a>
-        <button class="tab-btn" onclick="openRulesModal()" style="background:none; border:none; cursor:pointer;">
-          <span>📖</span> Tóm Tắt Luật
-        </button>
-      </nav>
-
-      <div class="header-actions">
-        <a href="leaflet.html" class="btn-secondary" style="font-size:0.8rem; padding:0.4rem 0.75rem; text-decoration:none;" title="Xem Leaflet 11 Trang">
-          📜 Leaflet
-        </a>
-        <button class="icon-btn" onclick="openRulesModal()" title="Xem tóm tắt luật chơi">
-          📖
-        </button>
-      </div>
-    </header>
-
-    <!-- Main Content -->
-    <main style="padding: 1rem;">
-
-      <!-- Top Title & Chapter Header -->
-      <div class="tt-top-bar">
-        <div>
-          <h1 class="section-title" id="currentChapterTitle" style="font-size:1.35rem; margin-bottom:0.15rem;">
-            Chương I: Awakening
-          </h1>
-          <p class="section-subtitle" id="currentChapterSubtitle" style="font-size:0.8rem; color:var(--text-muted); margin:0;">
-            12 Thẻ Mặt Trời & 12 Thẻ Mặt Trăng • Phân phối cân bằng
-          </p>
-        </div>
-
-        <div style="display:flex; gap:0.4rem; flex-wrap:wrap; align-items:center;">
-          <button id="btnOpenSleeve" class="btn-secondary" onclick="openSleeveModal()"
-            style="font-size:0.78rem; padding:0.4rem 0.8rem; display:inline-flex; align-items:center; gap:0.3rem;"
-            title="Xem 2 mặt thẻ Sleeve của chương">
-            <span>🎴</span> Sleeve
-          </button>
-          <a id="btnTopLeaflet" href="leaflet.html?chapter=1" class="btn-primary"
-            style="font-size:0.78rem; padding:0.4rem 0.8rem; text-decoration:none; display:inline-flex; align-items:center; gap:0.3rem;"
-            title="Xem Leaflet quy tắc của chương này">
-            <span>📜</span> Xem Leaflet
-          </a>
-        </div>
-      </div>
+    <!-- Main Content: Clock Board & Level Guide -->
+    <main style="padding: 0.75rem 1rem;">
 
       <!-- Chapter Horizontal Scroll Carousel -->
       <div class="chapter-pills-container" id="chapterPills">
@@ -255,26 +194,6 @@
       </section>
 
     </main>
-
-    <!-- Bottom Navigation (Mobile) -->
-    <nav class="bottom-nav">
-      <a href="index.html" class="bnav-item active">
-        <span class="bnav-icon">⏱️</span>
-        <span>Bàn Chơi</span>
-      </a>
-      <a href="leaflet.html" class="bnav-item">
-        <span class="bnav-icon">📜</span>
-        <span>Leaflet</span>
-      </a>
-      <a href="#deckGuide" class="bnav-item">
-        <span class="bnav-icon">🃏</span>
-        <span>Chia Bài</span>
-      </a>
-      <button class="bnav-item" onclick="openRulesModal()" style="background:none; border:none; color:inherit; cursor:pointer;">
-        <span class="bnav-icon">📖</span>
-        <span>Luật Nhanh</span>
-      </button>
-    </nav>
 
     <!-- Modals -->
     <!-- Sleeve Flip Modal -->
