@@ -49,53 +49,30 @@
         </div>
       </div>
 
-      <!-- Interactive Clock Board Viewer Card -->
-      <div class="board-viewer-card">
-        
-        <div class="board-viewer-header">
-          <div class="current-board-info">
-            <span class="board-badge-lg" id="currentBoardBadge">Board 1.1</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">Mặt Đồng Hồ Trực Quan</span>
-          </div>
-          <div class="board-actions-bar">
-            <button class="icon-btn" onclick="zoomBoard(0.25)" title="Phóng to (Zoom In)">🔍+</button>
-            <button class="icon-btn" onclick="zoomBoard(-0.25)" title="Thu nhỏ (Zoom Out)">🔍-</button>
-            <button class="icon-btn" onclick="resetZoom()" title="Vừa màn hình (Reset)">⟲ 1:1</button>
-          </div>
+      <!-- Interactive Clock Board (100vw on mobile) -->
+      <div class="board-stage-full" id="boardStage">
+        <div class="rotation-indicator-overlay" id="rotationIndicatorOverlay">
+          🔄 Xoay: <span id="rotationOverlayText">0°</span>
         </div>
 
-        <div class="board-stage" id="boardStage">
-          <div class="rotation-indicator-overlay" id="rotationIndicatorOverlay">
-            🔄 Xoay: <span id="rotationOverlayText">0°</span>
-          </div>
-
-          <div class="board-image-wrapper" id="boardImageWrapper">
-            <img id="boardImage" class="board-image" src="" alt="Clock Board">
-          </div>
-
-          <!-- Floating quick controls -->
-          <div class="board-floating-controls">
-            <button class="control-btn" onclick="zoomBoard(0.25)" title="Phóng to">+</button>
-            <button class="control-btn" onclick="zoomBoard(-0.25)" title="Thu nhỏ">-</button>
-            <button class="control-btn" onclick="resetZoom()" title="Reset 1:1">1:1</button>
-          </div>
+        <div class="board-image-wrapper" id="boardImageWrapper">
+          <img id="boardImage" class="board-image" src="" alt="Clock Board">
         </div>
+      </div>
 
-        <!-- Board Completion & Star Rating Footer -->
-        <div class="board-viewer-footer">
-          <label class="completion-toggle">
-            <input type="checkbox" id="levelCompletedCheckbox" class="completion-checkbox">
-            <span>✅ Đã hoàn thành màn này</span>
-          </label>
+      <!-- Board Completion & Star Rating Footer -->
+      <div class="board-viewer-footer">
+        <label class="completion-toggle">
+          <input type="checkbox" id="levelCompletedCheckbox" class="completion-checkbox">
+          <span>✅ Đã hoàn thành màn này</span>
+        </label>
 
-          <div class="star-rating-box">
-            <span style="font-size:0.8rem; color:var(--text-muted); margin-right:0.3rem;">Đánh giá:</span>
-            <button class="star-btn" data-value="1" title="1 Sao">☆</button>
-            <button class="star-btn" data-value="2" title="2 Sao">☆</button>
-            <button class="star-btn" data-value="3" title="3 Sao">☆</button>
-          </div>
+        <div class="star-rating-box">
+          <span style="font-size:0.8rem; color:var(--text-muted); margin-right:0.3rem;">Đánh giá:</span>
+          <button class="star-btn" data-value="1" title="1 Sao">☆</button>
+          <button class="star-btn" data-value="2" title="2 Sao">☆</button>
+          <button class="star-btn" data-value="3" title="3 Sao">☆</button>
         </div>
-
       </div>
 
       <!-- Sleeve Card Preview Box -->
