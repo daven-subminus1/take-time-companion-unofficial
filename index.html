@@ -40,12 +40,15 @@
       <div class="chapter8-rotation-box" id="chapter8RotationBox">
         <div>
           <span style="font-weight:700; color:var(--accent-sun);">🔄 Cơ Chế Xoay (Chapter VIII - Revolution):</span>
-          <span style="font-size:0.8rem; color:var(--text-sub); margin-left:0.3rem;">Xoay 60° (2 cung giờ) theo chiều kim đồng hồ khi đặt bài vào cung xoay</span>
+          <span style="font-size:0.8rem; color:var(--text-sub); margin-left:0.3rem;">Xoay 60° (2 cung giờ) theo chiều
+            kim đồng hồ khi đặt bài vào cung xoay</span>
         </div>
         <div class="rotate-btn-group">
           <button class="btn-rotate" onclick="rotateBoard(-60)">↺ -60°</button>
           <button class="btn-rotate" onclick="rotateBoard(60)">↻ +60°</button>
-          <button class="btn-rotate" onclick="resetRotation()" style="background:rgba(255,255,255,0.08); border-color:var(--border-glass); color:var(--text-sub);">⟲ Về 0°</button>
+          <button class="btn-rotate" onclick="resetRotation()"
+            style="background:rgba(255,255,255,0.08); border-color:var(--border-glass); color:var(--text-sub);">⟲ Về
+            0°</button>
         </div>
       </div>
 
@@ -60,114 +63,17 @@
         </div>
       </div>
 
-      <!-- Board Completion & Star Rating Footer -->
-      <div class="board-viewer-footer">
-        <label class="completion-toggle">
-          <input type="checkbox" id="levelCompletedCheckbox" class="completion-checkbox">
-          <span>✅ Đã hoàn thành màn này</span>
-        </label>
-
-        <div class="star-rating-box">
-          <span style="font-size:0.8rem; color:var(--text-muted); margin-right:0.3rem;">Đánh giá:</span>
-          <button class="star-btn" data-value="1" title="1 Sao">☆</button>
-          <button class="star-btn" data-value="2" title="2 Sao">☆</button>
-          <button class="star-btn" data-value="3" title="3 Sao">☆</button>
-        </div>
-      </div>
-
-      <!-- Sleeve Card Preview Box -->
-      <div class="sleeve-box" id="sleevePreviewBox" style="display:none;">
-        <img id="sleeveThumb" class="sleeve-thumb" src="" alt="Sleeve" onclick="openSleeveModal()" title="Chạm để xem 2 mặt Sleeve">
-        <div class="sleeve-info">
-          <h4 id="sleeveTitle" class="sleeve-title">Sleeve Chương</h4>
-          <p id="sleeveDesc" class="sleeve-desc">Chạm vào ảnh để lật xem 2 mặt thẻ Sleeve (Mặt Trước & Mặt Sau).</p>
-          <button class="btn-secondary" onclick="openSleeveModal()" style="font-size:0.78rem; padding:0.35rem 0.75rem; margin-top:0.4rem; display:inline-flex; align-items:center; gap:0.25rem;">
-            🔄 Lật Thẻ Sleeve 3D
-          </button>
-        </div>
-      </div>
-
-      <!-- Deck Setup / Standard Cards Converter -->
-      <section class="deck-guide-card" id="deckGuide">
-        <div class="deck-guide-title">
-          <span>🃏</span> Chuẩn Bị Bài Từ Bộ Bài Tây (52 Lá)
-        </div>
-
-        <p style="font-size:0.85rem; color:var(--text-sub); margin-bottom:1rem; line-height:1.5;">
-          Quy đổi 24 lá bài thành 2 bộ <strong>Mặt Trời (Solar)</strong> và <strong>Mặt Trăng (Lunar)</strong>:
-        </p>
-
-        <div class="deck-split-grid">
-          <div class="deck-box-item solar">
-            <div class="deck-box-header">☀️ 12 Thẻ Mặt Trời (Solar Cards)</div>
-            <div class="deck-box-content">
-              Lấy các lá bài <strong>ĐỎ</strong> (Cơ ♥ hoặc Rô ♦) từ lá <strong>Át (1) đến Q (12)</strong>.<br>
-              <span style="font-size:0.75rem; color:var(--text-muted);">A=1, 2..10, J=11, Q=12</span>
-            </div>
+      <!-- Level Specific Rules & Field Guide -->
+      <section class="level-guide-card" id="levelGuideCard" style="display:none;">
+        <div class="level-guide-header">
+          <div class="level-guide-badge">
+            <span>📋</span> Chỉ Dẫn Màn Chơi
           </div>
-
-          <div class="deck-box-item lunar">
-            <div class="deck-box-header">🌙 12 Thẻ Mặt Trăng (Lunar Cards)</div>
-            <div class="deck-box-content">
-              Lấy các lá bài <strong>ĐEN</strong> (Bích ♠ hoặc Chuồn ♣) từ lá <strong>Át (1) đến Q (12)</strong>.<br>
-              <span style="font-size:0.75rem; color:var(--text-muted);">A=1, 2..10, J=11, Q=12</span>
-            </div>
-          </div>
+          <span id="levelGuideName" class="level-guide-name">Level 1.1</span>
         </div>
-
-        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.75rem;">
-          ℹ️ Các lá <strong>K (King) & Joker</strong> không sử dụng trong ván bài (có thể dùng làm Token đánh dấu lượt hoặc kim xoay).
-        </p>
-
-        <h3 style="font-size:0.95rem; font-weight:700; margin:1rem 0 0.5rem; color:var(--accent-sun);">
-          👥 Chia bài theo số lượng người chơi:
-        </h3>
-
-        <table class="player-count-table">
-          <thead>
-            <tr>
-              <th>Số người</th>
-              <th>Bài trên tay</th>
-              <th>Quy tắc lượt</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>1 người</strong></td>
-              <td>4 lá tay</td>
-              <td>Rút bài từ chồng bài tẩy và sắp xếp vào các cung giờ</td>
-            </tr>
-            <tr>
-              <td><strong>2 người</strong></td>
-              <td>4 lá mỗi người</td>
-              <td>Đánh xong 4 lá đầu tiên thì nhặt tiếp 2 lá</td>
-            </tr>
-            <tr>
-              <td><strong>3 người</strong></td>
-              <td>4 lá mỗi người</td>
-              <td>Lần lượt đánh bài theo chiều kim đồng hồ</td>
-            </tr>
-            <tr>
-              <td><strong>4 người</strong></td>
-              <td>3 lá mỗi người</td>
-              <td>Phối hợp thảo luận chiến thuật</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- Modifiers / Challenge Tokens Grid -->
-        <div style="margin-top:1.5rem; border-top:1px solid var(--border-glass); padding-top:1.25rem;">
-          <h3 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem; color:var(--accent-sun);">
-            🎴 Thẻ Biến Thể & Thử Thách (Modifiers / Rebirth Tokens)
-          </h3>
-          <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.75rem;">
-            Các quy tắc thử thách bổ sung có thể áp dụng cho bất kỳ màn nào:
-          </p>
-          <div class="modifiers-grid" id="modifiersGrid">
-            <!-- Rendered via JS -->
-          </div>
+        <div class="level-guide-list" id="levelGuideList">
+          <!-- Rendered dynamically via JS -->
         </div>
-
       </section>
 
     </main>

@@ -938,3 +938,121 @@
   color: var(--text-sub);
   line-height: 1.4;
 }
+
+/* ==========================================================================
+   Level Specific Field Guide (Chỉ dẫn màn chơi & cắt góc)
+   ========================================================================== */
+.level-guide-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.level-guide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.level-guide-badge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent-sun);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.level-guide-name {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.level-guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.level-guide-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  background: rgba(11, 15, 25, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.level-guide-item:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(22, 32, 54, 0.75);
+  transform: translateY(-2px);
+}
+
+.level-guide-thumb {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-color: #060911;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.level-guide-thumb:hover {
+  transform: scale(1.12);
+  border-color: var(--accent-sun);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+}
+
+.level-guide-thumb.text-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.25);
+  cursor: default;
+}
+
+.level-guide-thumb.text-only:hover {
+  transform: none;
+  border-color: rgba(245, 158, 11, 0.25);
+  box-shadow: none;
+}
+
+.level-guide-info {
+  flex-grow: 1;
+}
+
+.level-guide-item-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+
+.level-guide-item-desc {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 1.45;
+}
+

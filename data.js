@@ -98,7 +98,33 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/18425523817910442540/97F351686A277A3C1537FD4A78F4BF6DD0FE5ED0/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/11932575797834154883/07BC7734487955D2F19B344A2CF6CBB45E7DA293/",
       levels: [
-        { id: "1.1", name: "Level 1.1", url: "https://steamusercontent-a.akamaihd.net/ugc/15703307762668170147/9654F9ED69D778DEFF959297D5689E3E3E041FEA/" },
+        { 
+          id: "1.1", 
+          name: "Level 1.1", 
+          url: "https://steamusercontent-a.akamaihd.net/ugc/15703307762668170147/9654F9ED69D778DEFF959297D5689E3E3E041FEA/",
+          guides: [
+            {
+              pos: 1,
+              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
+              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
+            },
+            {
+              pos: 7,
+              title: "Ký hiệu Vô hạn (∞)",
+              desc: "Giá trị tổng 2 lá bài ở mỗi phân đoạn có thể vượt quá 24 (chỉ áp dụng ở các màn 1-3. Từ màn 4 trở đi tối đa là 24)."
+            },
+            {
+              pos: 4,
+              title: "Điều kiện hoàn thành (Resolution)",
+              desc: "Phải có ít nhất 1 lá bài ở mỗi 6 cung giờ. Giá trị các cung giờ phải tăng dần (hoặc bằng nhau) theo chiều kim đồng hồ."
+            },
+            {
+              pos: 8,
+              title: "Lưu ý chiến thuật",
+              desc: "Nên thảo luận giữ các lá bài lớn (10, J, Q) cho các cung giờ phía cuối để đảm bảo chuỗi số tăng dần liên tục."
+            }
+          ]
+        },
         { id: "1.2", name: "Level 1.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10385147287207204669/0D522E0BC3A3B3FD3693E2C10DC4AAA008C03100/" },
         { id: "1.3", name: "Level 1.3", url: "https://steamusercontent-a.akamaihd.net/ugc/17233917275871474503/8B2EC3D78605E829B6F4CFA507EB9BA62C59A5FE/" },
         { id: "1.4", name: "Level 1.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15600617884164400557/BEEA32E60496751716054F74939F2A78E1D128BF/" }
@@ -239,28 +265,6 @@ const TAKE_TIME_DATA = {
         { id: "10.3", name: "Level 10.3", url: "https://steamusercontent-a.akamaihd.net/ugc/9261135796523656428/01A548380839E0DB9ECC61217C38318F992CDB70/" },
         { id: "10.4", name: "Level 10.4", url: "https://steamusercontent-a.akamaihd.net/ugc/13987952581233767420/DBA069A4FBEFCE5D9271B737D44111B7ECD491BA/" }
       ]
-    },
-    {
-      id: 11,
-      roman: "XI",
-      title: "Regrets",
-      subtitle: "Bao Trùm Tiếc Nuối (Sleeve of Regrets)",
-      isSpecial: true,
-      description: "Nếu bạn gặp bế tắc hoặc chưa thể vượt qua một màn chơi, hãy lưu nó vào đây để tĩnh tâm và chinh phục lại vào lúc khác!",
-      front: "https://steamusercontent-a.akamaihd.net/ugc/15191438438503927130/85A9E7E2F2BDC706573646326D3DAEF693116D61/",
-      back: "https://steamusercontent-a.akamaihd.net/ugc/17584912625954497319/8719FCF8E97369A6B7BE178CF5F9ECB8BB456F87/",
-      levels: []
-    },
-    {
-      id: 12,
-      roman: "XII",
-      title: "Rebirth",
-      subtitle: "Sự Tái Sinh (Rebirth & Modifiers)",
-      isSpecial: true,
-      description: "Chương tái sinh mở khóa kim giây Second Hand và các thẻ hiệu ứng sửa đổi nâng cao (Challenge Modifiers).",
-      front: "https://steamusercontent-a.akamaihd.net/ugc/10167058741981977669/586BEA91900BAD274B83AA5AE940170CF9144991/",
-      back: "https://steamusercontent-a.akamaihd.net/ugc/10342294745219999667/64256F5C3821CF9683FC914E87B4DCE2EE4D9620/",
-      levels: []
     }
   ],
   bonusTokens: [

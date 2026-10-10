@@ -233,12 +233,91 @@ document.addEventListener('DOMContentLoaded', () => {
       const bBadge = el('currentBoardBadge');
       if (bImg) bImg.src = level.url;
       if (bBadge) bBadge.textContent = `Board ${level.id}`;
+      renderLevelGuides(level);
     }
 
     const lvlProgress = state.progress[levelId] || { completed: false, stars: 0 };
     const chk = el('levelCompletedCheckbox');
     if (chk) chk.checked = !!lvlProgress.completed;
     updateStarUI(lvlProgress.stars || 0);
+  }
+
+  // Presets mapping for cropping regions on the clock board
+  const GUIDE_POS_PRESETS = {
+    1: { x: 50, y: 5.5, zoom: 440 },   // 1: Top (Góc trên cùng)
+    2: { x: 88, y: 12, zoom: 400 },    // 2: Top-Right
+    3: { x: 88, y: 88, zoom: 400 },    // 3: Bottom-Right
+    4: { x: 50, y: 94.5, zoom: 440 },  // 4: Bottom (Góc dưới cùng)
+    5: { x: 12, y: 88, zoom: 400 },    // 5: Bottom-Left
+    6: { x: 12, y: 12, zoom: 400 },    // 6: Top-Left
+    7: { x: 50, y: 50, zoom: 360 },    // 7: Center (Tâm đồng hồ)
+    8: null                            // 8: Text-only
+  };
+  GUIDE_POS_PRESETS['top'] = GUIDE_POS_PRESETS[1];
+  GUIDE_POS_PRESETS['top-right'] = GUIDE_POS_PRESETS[2];
+  GUIDE_POS_PRESETS['bottom-right'] = GUIDE_POS_PRESETS[3];
+  GUIDE_POS_PRESETS['bottom'] = GUIDE_POS_PRESETS[4];
+  GUIDE_POS_PRESETS['bottom-left'] = GUIDE_POS_PRESETS[5];
+  GUIDE_POS_PRESETS['top-left'] = GUIDE_POS_PRESETS[6];
+  GUIDE_POS_PRESETS['center'] = GUIDE_POS_PRESETS[7];
+  GUIDE_POS_PRESETS['text'] = null;
+
+  function renderLevelGuides(level) {
+    const card = el('levelGuideCard');
+    const list = el('levelGuideList');
+    const nameEl = el('levelGuideName');
+    if (!card || !list) return;
+
+    if (!level || !level.guides || level.guides.length === 0) {
+      card.style.display = 'none';
+      list.innerHTML = '';
+      return;
+    }
+
+    card.style.display = 'block';
+    if (nameEl) nameEl.textContent = `Màn ${level.id}`;
+
+    list.innerHTML = '';
+    level.guides.forEach(g => {
+      const item = document.createElement('div');
+      item.className = 'level-guide-item';
+
+      let cropData = null;
+      if (g.x !== undefined && g.y !== undefined) {
+        cropData = { x: g.x, y: g.y, zoom: g.zoom || 400 };
+      } else if (GUIDE_POS_PRESETS[g.pos] !== undefined) {
+        cropData = GUIDE_POS_PRESETS[g.pos];
+      }
+
+      let thumbHtml = '';
+      if (cropData) {
+        const zoomVal = g.zoom || cropData.zoom || 400;
+        const xVal = g.x !== undefined ? g.x : cropData.x;
+        const yVal = g.y !== undefined ? g.y : cropData.y;
+        thumbHtml = `
+          <div class="level-guide-thumb" 
+               style="background-image: url('${level.url}'); background-size: ${zoomVal}%; background-position: ${xVal}% ${yVal}%;"
+               title="${g.title}">
+          </div>
+        `;
+      } else {
+        const icon = g.icon || '💡';
+        thumbHtml = `
+          <div class="level-guide-thumb text-only">
+            <span>${icon}</span>
+          </div>
+        `;
+      }
+
+      item.innerHTML = `
+        ${thumbHtml}
+        <div class="level-guide-info">
+          <div class="level-guide-item-title">${g.title}</div>
+          <div class="level-guide-item-desc">${g.desc}</div>
+        </div>
+      `;
+      list.appendChild(item);
+    });
   }
 
   function updateBoardTransform() {
