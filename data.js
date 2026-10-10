@@ -130,7 +130,35 @@ const TAKE_TIME_DATA = {
             }
           ]
         },
-        { id: "1.2", name: "Level 1.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10385147287207204669/0D522E0BC3A3B3FD3693E2C10DC4AAA008C03100/" },
+        {
+          id: "1.2", name: "Level 1.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10385147287207204669/0D522E0BC3A3B3FD3693E2C10DC4AAA008C03100/", guides: [
+            {
+              pos: 3,
+              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
+              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
+            },
+            {
+              pos: 6,
+              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
+              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
+            },
+            {
+              pos: 7,
+              title: "Ký hiệu Vô hạn (∞)",
+              desc: "Giá trị tổng 2 lá bài ở mỗi phân đoạn có thể vượt quá 24 (chỉ áp dụng ở các màn 1-3. Từ màn 4 trở đi tối đa là 24)."
+            },
+            {
+              pos: 4,
+              title: "Điều kiện hoàn thành (Resolution)",
+              desc: "Phải có ít nhất 1 lá bài ở mỗi 6 cung giờ. Giá trị các cung giờ phải tăng dần (hoặc bằng nhau) theo chiều kim đồng hồ."
+            },
+            {
+              pos: 8,
+              title: "Lưu ý chiến thuật",
+              desc: "Nên thảo luận giữ các lá bài lớn (10, J, Q) cho các cung giờ phía cuối để đảm bảo chuỗi số tăng dần liên tục."
+            }
+          ]
+        },
         { id: "1.3", name: "Level 1.3", url: "https://steamusercontent-a.akamaihd.net/ugc/17233917275871474503/8B2EC3D78605E829B6F4CFA507EB9BA62C59A5FE/" },
         { id: "1.4", name: "Level 1.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15600617884164400557/BEEA32E60496751716054F74939F2A78E1D128BF/" }
       ]

@@ -161,6 +161,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderLevels(chapter);
+    updateUrlParams(chapterId, state.currentLevelId);
+  }
+
+  function updateUrlParams(chapterId, levelId) {
+    try {
+      const url = new URL(window.location.href);
+      if (chapterId) url.searchParams.set('chapter', chapterId);
+      if (levelId) url.searchParams.set('level', levelId);
+      window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+    } catch (e) {
+      // Fallback
+    }
   }
 
   function renderLevels(chapter) {
@@ -215,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chapter = TAKE_TIME_DATA.chapters.find(c => c.id === state.currentChapterId);
     if (chapter) renderLevels(chapter);
     loadBoard(levelId);
+    updateUrlParams(state.currentChapterId, levelId);
   }
 
   function loadBoard(levelId) {
@@ -238,13 +251,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Presets mapping for cropping regions on the clock board
   const GUIDE_POS_PRESETS = {
-    1: { x: 50, y: 4.8, zoom: 850 },   // 1: Top (Góc trên cùng)
-    2: { x: 91, y: 9, zoom: 800 },     // 2: Top-Right
-    3: { x: 91, y: 91, zoom: 800 },    // 3: Bottom-Right
-    4: { x: 50, y: 95.5, zoom: 850 },  // 4: Bottom (Góc dưới cùng)
-    5: { x: 9, y: 91, zoom: 800 },     // 5: Bottom-Left
-    6: { x: 9, y: 9, zoom: 800 },      // 6: Top-Left
-    7: { x: 50, y: 50, zoom: 720 },    // 7: Center (Tâm đồng hồ)
+    1: { x: 50, y: 4.8, zoom: 800 },   // 1: Top (Góc trên cùng)
+    2: { x: 92, y: 28, zoom: 800 },     // 2: Top-Right
+    3: { x: 92, y: 72, zoom: 800 },    // 3: Bottom-Right
+    4: { x: 50, y: 95.5, zoom: 800 },  // 4: Bottom (Góc dưới cùng)
+    5: { x: 7, y: 91, zoom: 800 },     // 5: Bottom-Left
+    6: { x: 7, y: 28, zoom: 800 },      // 6: Top-Left
+    7: { x: 50, y: 50, zoom: 800 },    // 7: Center (Tâm đồng hồ)
     8: null                            // 8: Text-only
   };
   GUIDE_POS_PRESETS['top'] = GUIDE_POS_PRESETS[1];
@@ -486,17 +499,43 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('active');
   };
 
-  // Initialize
+  // URL Synchronization on Browser Back/Forward
+  window.addEventListener('popstate', () => {
+    const params = new URLSearchParams(window.location.search);
+    const lvl = params.get('level');
+    const ch = parseInt(params.get('chapter'));
+
+    if (lvl) {
+      const foundCh = TAKE_TIME_DATA.chapters.find(c => c.levels && c.levels.some(l => l.id === lvl));
+      if (foundCh && foundCh.id !== state.currentChapterId) {
+        selectChapter(foundCh.id);
+      }
+      selectLevel(lvl);
+    } else if (!isNaN(ch) && ch !== state.currentChapterId) {
+      selectChapter(ch);
+    }
+  });
+
+  // Initialize from URL parameters (e.g. ?level=1.2 or ?chapter=2&level=2.3)
   const urlParams = new URLSearchParams(window.location.search);
   const chParam = parseInt(urlParams.get('chapter'));
   const lvlParam = urlParams.get('level');
 
-  renderChapterPills();
-  if (!isNaN(chParam) && TAKE_TIME_DATA.chapters.some(c => c.id === chParam)) {
-    selectChapter(chParam);
-  } else {
-    selectChapter(1);
+  let targetChapterId = 1;
+  if (lvlParam) {
+    // Tự động tìm đúng chương chứa màn chơi này
+    const foundChapter = TAKE_TIME_DATA.chapters.find(c =>
+      c.levels && c.levels.some(l => l.id === lvlParam)
+    );
+    if (foundChapter) {
+      targetChapterId = foundChapter.id;
+    }
+  } else if (!isNaN(chParam) && TAKE_TIME_DATA.chapters.some(c => c.id === chParam)) {
+    targetChapterId = chParam;
   }
+
+  renderChapterPills();
+  selectChapter(targetChapterId);
   if (lvlParam) {
     selectLevel(lvlParam);
   }
