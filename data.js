@@ -98,13 +98,18 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/18425523817910442540/97F351686A277A3C1537FD4A78F4BF6DD0FE5ED0/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/11932575797834154883/07BC7734487955D2F19B344A2CF6CBB45E7DA293/",
       levels: [
-        { 
-          id: "1.1", 
-          name: "Level 1.1", 
+        {
+          id: "1.1",
+          name: "Level 1.1",
           url: "https://steamusercontent-a.akamaihd.net/ugc/15703307762668170147/9654F9ED69D778DEFF959297D5689E3E3E041FEA/",
           guides: [
             {
               pos: 1,
+              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
+              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
+            },
+            {
+              pos: 6,
               title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
               desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
             },

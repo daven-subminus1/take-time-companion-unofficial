@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const label = ch.id === 12 ? 'Rebirth' : `Ch.${ch.id}`;
       pill.innerHTML = `<span>${label}</span>`;
       pill.title = `Chương ${ch.roman}: ${ch.title}`;
-      
+
       pill.onclick = (e) => {
         // Nếu vừa kéo rê quá 5px thì không kích hoạt click
         if (pillsDraggedDistance > 6) {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         selectChapter(ch.id);
       };
-      
+
       container.appendChild(pill);
     });
 
@@ -193,17 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = document.createElement('button');
       const isCompleted = state.progress[lvl.id]?.completed;
       const stars = state.progress[lvl.id]?.stars || 0;
-      
+
       btn.className = `level-btn ${lvl.id === state.currentLevelId ? 'active' : ''} ${isCompleted ? 'completed' : ''}`;
-      
-      let starStr = '☆☆☆';
-      if (stars === 1) starStr = '★☆☆';
-      if (stars === 2) starStr = '★★☆';
-      if (stars === 3) starStr = '★★★';
 
       btn.innerHTML = `
         <span>${lvl.id}</span>
-        <span class="star-indicator">${isCompleted ? starStr : '•'}</span>
       `;
       btn.onclick = () => selectLevel(lvl.id);
       row.appendChild(btn);
@@ -244,13 +238,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Presets mapping for cropping regions on the clock board
   const GUIDE_POS_PRESETS = {
-    1: { x: 50, y: 5.5, zoom: 440 },   // 1: Top (Góc trên cùng)
-    2: { x: 88, y: 12, zoom: 400 },    // 2: Top-Right
-    3: { x: 88, y: 88, zoom: 400 },    // 3: Bottom-Right
-    4: { x: 50, y: 94.5, zoom: 440 },  // 4: Bottom (Góc dưới cùng)
-    5: { x: 12, y: 88, zoom: 400 },    // 5: Bottom-Left
-    6: { x: 12, y: 12, zoom: 400 },    // 6: Top-Left
-    7: { x: 50, y: 50, zoom: 360 },    // 7: Center (Tâm đồng hồ)
+    1: { x: 50, y: 4.8, zoom: 850 },   // 1: Top (Góc trên cùng)
+    2: { x: 91, y: 9, zoom: 800 },     // 2: Top-Right
+    3: { x: 91, y: 91, zoom: 800 },    // 3: Bottom-Right
+    4: { x: 50, y: 95.5, zoom: 850 },  // 4: Bottom (Góc dưới cùng)
+    5: { x: 9, y: 91, zoom: 800 },     // 5: Bottom-Left
+    6: { x: 9, y: 9, zoom: 800 },      // 6: Top-Left
+    7: { x: 50, y: 50, zoom: 720 },    // 7: Center (Tâm đồng hồ)
     8: null                            // 8: Text-only
   };
   GUIDE_POS_PRESETS['top'] = GUIDE_POS_PRESETS[1];
@@ -333,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (overlayText) overlayText.textContent = `${state.rotationDegree}°`;
   }
 
-  window.rotateBoard = function(degrees) {
+  window.rotateBoard = function (degrees) {
     state.rotationDegree = (state.rotationDegree + degrees) % 360;
     if (state.rotationDegree < 0) state.rotationDegree += 360;
     updateBoardTransform();
@@ -342,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.resetRotation = function() {
+  window.resetRotation = function () {
     state.rotationDegree = 0;
     updateBoardTransform();
     if (typeof showToast === 'function') {
@@ -350,12 +344,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.zoomBoard = function(delta) {
+  window.zoomBoard = function (delta) {
     state.zoomLevel = Math.min(Math.max(state.zoomLevel + delta, 0.7), 2.2);
     updateBoardTransform();
   };
 
-  window.resetZoom = function() {
+  window.resetZoom = function () {
     state.zoomLevel = 1;
     state.rotationDegree = 0;
     updateBoardTransform();
@@ -374,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
         state.progress[state.currentLevelId].stars = 3;
       }
       saveProgress();
-      
+
       const chapter = TAKE_TIME_DATA.chapters.find(c => c.id === state.currentChapterId);
       if (chapter) renderLevels(chapter);
 
@@ -423,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Sleeve Flip Modal
-  window.openSleeveModal = function() {
+  window.openSleeveModal = function () {
     const chapter = TAKE_TIME_DATA.chapters.find(c => c.id === state.currentChapterId);
     if (!chapter || !chapter.front) return;
 
@@ -440,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) modal.classList.add('active');
   };
 
-  window.toggleSleeveFlip = function() {
+  window.toggleSleeveFlip = function () {
     const flipCard = el('flipCard');
     if (flipCard) flipCard.classList.toggle('flipped');
   };
@@ -466,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Rules Modal
-  window.openRulesModal = function() {
+  window.openRulesModal = function () {
     const modal = el('rulesModal');
     const title = el('rulesModalTitle');
     const body = el('rulesModalBody');
