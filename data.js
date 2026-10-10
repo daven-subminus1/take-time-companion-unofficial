@@ -871,31 +871,71 @@ const TAKE_TIME_DATA = {
           id: "9.1", name: "Level 9.1", url: "https://steamusercontent-a.akamaihd.net/ugc/17328735450066306026/2150C13402F22FCA1970C5E1425480BD5D8005A6/",
           guides: [
             {
-              pos: 1,
-              title: "Đánh vào đây sẽ xoay đồng hồ"
-            },
-
-            {
-              pos: 2,
-              title: "Đánh vào đây sẽ xoay đồng hồ"
+              pos: 3.5,
+              title: "Chênh lệch giữa 2 ô phải ít nhất 6 giá trị"
             },
             {
-              pos: 5,
-              title: "Đánh vào đây sẽ xoay đồng hồ"
-            },
-            {
-              pos: 6,
-              title: "Đánh vào đây sẽ xoay đồng hồ"
+              pos: 4,
+              title: "Lá lớn nhất phải được đánh vào đây"
             },
             {
               pos: 8,
-              title: "Giới hạn tổng 1 ô là 24"
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
             }
           ]
         },
-        { id: "9.2", name: "Level 9.2", url: "https://steamusercontent-a.akamaihd.net/ugc/11675917358681693593/0C6EAB6D75BBE2E9D07FC1C6B2C66F7A4D30762F/" },
-        { id: "9.3", name: "Level 9.3", url: "https://steamusercontent-a.akamaihd.net/ugc/10674890130604616084/58C99D7B5AFB6E1FBA9A58DD8B0DD28AA7F9C5EE/" },
-        { id: "9.4", name: "Level 9.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15592390808083619315/2CC6AA643015BE43F0834CCC6C917F691EB22BAD/" }
+        {
+          id: "9.2", name: "Level 9.2", url: "https://steamusercontent-a.akamaihd.net/ugc/11675917358681693593/0C6EAB6D75BBE2E9D07FC1C6B2C66F7A4D30762F/",
+          guides: [
+            {
+              pos: 1.5,
+              title: "Chênh lệch giữa 2 ô phải ít nhất 2 giá trị"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "9.3", name: "Level 9.3", url: "https://steamusercontent-a.akamaihd.net/ugc/10674890130604616084/58C99D7B5AFB6E1FBA9A58DD8B0DD28AA7F9C5EE/",
+          guides: [
+            {
+              pos: 1,
+              title: "Lá nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 1.5,
+              title: "Giá trị 2 ô phải bằng nhau"
+            },
+            {
+              pos: 4,
+              title: "Lá nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 4.5,
+              title: "Giá trị 2 ô phải bằng nhau"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "9.4", name: "Level 9.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15592390808083619315/2CC6AA643015BE43F0834CCC6C917F691EB22BAD/",
+          guides: [
+
+            {
+              pos: 7,
+              title: "Chênh lệch giữa ô nhỏ nhất và lớn nhất không được vượt quá 4 giá trị"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        }
       ]
     },
     {
@@ -907,10 +947,58 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/10478704005505952889/C4187FE99132BDF5571DF62DA04D45EECC8EA3D2/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/13516358486532771617/5BFA29BCCEBD274B8C367B35A50E4252AD39F6E6/",
       levels: [
-        { id: "10.1", name: "Level 10.1", url: "https://steamusercontent-a.akamaihd.net/ugc/10766547707526683105/4ADE68F08EF2A933D11234F7AF10F4DDD4A76B64/" },
-        { id: "10.2", name: "Level 10.2", url: "https://steamusercontent-a.akamaihd.net/ugc/17188336104454836334/40FED1E0B3A9E441B3E253D3387C6984DA17BE20/" },
-        { id: "10.3", name: "Level 10.3", url: "https://steamusercontent-a.akamaihd.net/ugc/9261135796523656428/01A548380839E0DB9ECC61217C38318F992CDB70/" },
-        { id: "10.4", name: "Level 10.4", url: "https://steamusercontent-a.akamaihd.net/ugc/13987952581233767420/DBA069A4FBEFCE5D9271B737D44111B7ECD491BA/" }
+        {
+          id: "10.1", name: "Level 10.1", url: "https://steamusercontent-a.akamaihd.net/ugc/10766547707526683105/4ADE68F08EF2A933D11234F7AF10F4DDD4A76B64/",
+          guides: [
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Lá đầu tiên mỗi ô sẽ được tính riêng theo chiều kim giờ"
+            }
+          ]
+        },
+        {
+          id: "10.2", name: "Level 10.2", url: "https://steamusercontent-a.akamaihd.net/ugc/17188336104454836334/40FED1E0B3A9E441B3E253D3387C6984DA17BE20/",
+          guides: [
+            {
+              pos: 2,
+              title: "Có đúng 2 lá được đánh vào đây"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Lá đầu tiên mỗi ô sẽ được tính riêng theo chiều kim giờ"
+            }
+          ]
+        },
+        {
+          id: "10.3", name: "Level 10.3", url: "https://steamusercontent-a.akamaihd.net/ugc/9261135796523656428/01A548380839E0DB9ECC61217C38318F992CDB70/",
+          guides: [
+            {
+              pos: 2,
+              title: "Lá đầu tiên phải được đánh vào đây"
+            },
+            {
+              pos: 5,
+              title: "Lá cuối cùng phải được đánh vào đây"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Lá đầu tiên mỗi ô sẽ được tính riêng theo chiều kim giờ"
+            }
+          ]
+        },
+        {
+          id: "10.4", name: "Level 10.4", url: "https://steamusercontent-a.akamaihd.net/ugc/13987952581233767420/DBA069A4FBEFCE5D9271B737D44111B7ECD491BA/",
+          guides: [
+            {
+              pos: 7,
+              title: "Không được đánh vào 2 ô bị chặn, sau mỗi lượt đánh thì xoay thanh chặn theo chiều kim đồng hồ"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Lá đầu tiên mỗi ô sẽ được tính riêng theo chiều kim giờ"
+            }
+          ]
+        }
       ]
     }
   ],
