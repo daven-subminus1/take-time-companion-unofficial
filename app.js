@@ -251,20 +251,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Presets mapping for cropping regions on the clock board
   const GUIDE_POS_PRESETS = {
-    1: { x: 50, y: 4.8, zoom: 800 },   // 1: Top (Góc trên cùng)
-    2: { x: 92, y: 28, zoom: 800 },     // 2: Top-Right
-    3: { x: 92, y: 72, zoom: 800 },    // 3: Bottom-Right
-    4: { x: 50, y: 95.5, zoom: 800 },  // 4: Bottom (Góc dưới cùng)
-    5: { x: 7, y: 91, zoom: 800 },     // 5: Bottom-Left
-    6: { x: 7, y: 28, zoom: 800 },      // 6: Top-Left
-    7: { x: 50, y: 50, zoom: 800 },    // 7: Center (Tâm đồng hồ)
-    8: null                            // 8: Text-only
+    1: { x: 50, y: 4.8, zoom: 800 },    // 1: Top (12h)
+    1.5: { x: 76, y: 12, zoom: 800 },   // 1.5: Giữa 1 và 2 (~1h)
+    2: { x: 93, y: 28, zoom: 800 },     // 2: Top-Right (~2h)
+    2.5: { x: 96, y: 50, zoom: 800 },   // 2.5: Giữa 2 và 3 (Sườn phải ~3h)
+    3: { x: 93, y: 72, zoom: 800 },     // 3: Bottom-Right (~4h)
+    3.5: { x: 76, y: 88, zoom: 800 },   // 3.5: Giữa 3 và 4 (~5h)
+    4: { x: 50, y: 95.5, zoom: 800 },   // 4: Bottom (6h)
+    4.5: { x: 24, y: 88, zoom: 800 },   // 4.5: Giữa 4 và 5 (~7h)
+    5: { x: 7, y: 72, zoom: 800 },      // 5: Bottom-Left (~8h)
+    5.5: { x: 4, y: 50, zoom: 800 },    // 5.5: Giữa 5 và 6 (Sườn trái ~9h)
+    6: { x: 7, y: 28, zoom: 800 },      // 6: Top-Left (~10h)
+    6.5: { x: 24, y: 12, zoom: 800 },   // 6.5: Giữa 6 và 1 (~11h)
+    7: { x: 50, y: 50, zoom: 800 },     // 7: Center (Tâm đồng hồ)
+    8: null                             // 8: Text-only (Chỉ dẫn phụ)
   };
   GUIDE_POS_PRESETS['top'] = GUIDE_POS_PRESETS[1];
   GUIDE_POS_PRESETS['top-right'] = GUIDE_POS_PRESETS[2];
+  GUIDE_POS_PRESETS['right'] = GUIDE_POS_PRESETS[2.5];
   GUIDE_POS_PRESETS['bottom-right'] = GUIDE_POS_PRESETS[3];
   GUIDE_POS_PRESETS['bottom'] = GUIDE_POS_PRESETS[4];
   GUIDE_POS_PRESETS['bottom-left'] = GUIDE_POS_PRESETS[5];
+  GUIDE_POS_PRESETS['left'] = GUIDE_POS_PRESETS[5.5];
   GUIDE_POS_PRESETS['top-left'] = GUIDE_POS_PRESETS[6];
   GUIDE_POS_PRESETS['center'] = GUIDE_POS_PRESETS[7];
   GUIDE_POS_PRESETS['text'] = null;
@@ -320,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ${thumbHtml}
         <div class="level-guide-info">
           <div class="level-guide-item-title">${g.title}</div>
-          <div class="level-guide-item-desc">${g.desc}</div>
         </div>
       `;
       list.appendChild(item);

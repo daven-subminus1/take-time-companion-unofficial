@@ -105,62 +105,73 @@ const TAKE_TIME_DATA = {
           guides: [
             {
               pos: 1,
-              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
-              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
+              title: "Có đúng 1 lá trắng phải được đánh vào đây"
             },
             {
               pos: 6,
-              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
-              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
+              title: "Có đúng 3 lá phải được đánh vào đây"
             },
             {
               pos: 7,
-              title: "Ký hiệu Vô hạn (∞)",
-              desc: "Giá trị tổng 2 lá bài ở mỗi phân đoạn có thể vượt quá 24 (chỉ áp dụng ở các màn 1-3. Từ màn 4 trở đi tối đa là 24)."
-            },
-            {
-              pos: 4,
-              title: "Điều kiện hoàn thành (Resolution)",
-              desc: "Phải có ít nhất 1 lá bài ở mỗi 6 cung giờ. Giá trị các cung giờ phải tăng dần (hoặc bằng nhau) theo chiều kim đồng hồ."
-            },
-            {
-              pos: 8,
-              title: "Lưu ý chiến thuật",
-              desc: "Nên thảo luận giữ các lá bài lớn (10, J, Q) cho các cung giờ phía cuối để đảm bảo chuỗi số tăng dần liên tục."
+              title: "Bỏ giới hạn tổng tối đa là 24"
             }
           ]
         },
         {
-          id: "1.2", name: "Level 1.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10385147287207204669/0D522E0BC3A3B3FD3693E2C10DC4AAA008C03100/", guides: [
+          id: "1.2", name: "Level 1.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10385147287207204669/0D522E0BC3A3B3FD3693E2C10DC4AAA008C03100/",
+          guides: [
             {
               pos: 3,
-              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
-              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
-            },
-            {
-              pos: 6,
-              title: "Vị trí đặt bài khởi đầu (Placement: 1 & 2)",
-              desc: "Hai lá bài đầu tiên cả nhóm đánh BẮT BUỘC phải đặt vào 2 cung giờ có đánh dấu 1 và 2."
-            },
-            {
-              pos: 7,
-              title: "Ký hiệu Vô hạn (∞)",
-              desc: "Giá trị tổng 2 lá bài ở mỗi phân đoạn có thể vượt quá 24 (chỉ áp dụng ở các màn 1-3. Từ màn 4 trở đi tối đa là 24)."
+              title: "Giá trị trong 8-12"
             },
             {
               pos: 4,
-              title: "Điều kiện hoàn thành (Resolution)",
-              desc: "Phải có ít nhất 1 lá bài ở mỗi 6 cung giờ. Giá trị các cung giờ phải tăng dần (hoặc bằng nhau) theo chiều kim đồng hồ."
+              title: "Có đúng 3 lá phải được đánh vào đây"
             },
             {
-              pos: 8,
-              title: "Lưu ý chiến thuật",
-              desc: "Nên thảo luận giữ các lá bài lớn (10, J, Q) cho các cung giờ phía cuối để đảm bảo chuỗi số tăng dần liên tục."
+              pos: 7,
+              title: "Bỏ giới hạn tổng tối đa là 24"
             }
           ]
         },
-        { id: "1.3", name: "Level 1.3", url: "https://steamusercontent-a.akamaihd.net/ugc/17233917275871474503/8B2EC3D78605E829B6F4CFA507EB9BA62C59A5FE/" },
-        { id: "1.4", name: "Level 1.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15600617884164400557/BEEA32E60496751716054F74939F2A78E1D128BF/" }
+        {
+          id: "1.3", name: "Level 1.3", url: "https://steamusercontent-a.akamaihd.net/ugc/17233917275871474503/8B2EC3D78605E829B6F4CFA507EB9BA62C59A5FE/",
+          guides: [
+            {
+              pos: 2,
+              title: "Lá thứ 2 phải đánh vào đây"
+            },
+            {
+              pos: 3,
+              title: "Lá thứ nhất phải đánh vào đây"
+            },
+            {
+              pos: 6,
+              title: "Giá trị trong 20-30"
+            },
+            {
+              pos: 7,
+              title: "Bỏ giới hạn tổng tối đa là 24"
+            }
+          ]
+        },
+        {
+          id: "1.4", name: "Level 1.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15600617884164400557/BEEA32E60496751716054F74939F2A78E1D128BF/",
+          guides: [
+            {
+              pos: 1,
+              title: "Ô này phải có giá trị gần 6 nhất"
+            },
+            {
+              pos: 4,
+              title: "Có đúng 1 lá đen và 1 lá trắng"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24"
+            }
+          ]
+        }
       ]
     },
     {
@@ -172,10 +183,78 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/17074682661745434999/2B3127AFEB91183D94C0A24534B918167FCE491B/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/16201933518253320487/F25AF1F4C97352D37859782D3E632225E76DA0EB/",
       levels: [
-        { id: "2.1", name: "Level 2.1", url: "https://steamusercontent-a.akamaihd.net/ugc/14280661180766557701/020371840632CFF58B67C301001323B88B6ACC53/" },
-        { id: "2.2", name: "Level 2.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10900870861288750109/2AA06E982F30B9EADB0C45D9AB87F0C6DCEB06AC/" },
-        { id: "2.3", name: "Level 2.3", url: "https://steamusercontent-a.akamaihd.net/ugc/15145851534642029728/86B69D30E940A5F6C7AED56961E20E5F9522DE23/" },
-        { id: "2.4", name: "Level 2.4", url: "https://steamusercontent-a.akamaihd.net/ugc/9770768207491621603/6287A814B52A47F3292497569FDD04FD3FB34995/" }
+        {
+          id: "2.1", name: "Level 2.1", url: "https://steamusercontent-a.akamaihd.net/ugc/14280661180766557701/020371840632CFF58B67C301001323B88B6ACC53/",
+          guides: [
+            {
+              pos: 1,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 2,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 3,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24"
+            }
+          ]
+        },
+        {
+          id: "2.2", name: "Level 2.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10900870861288750109/2AA06E982F30B9EADB0C45D9AB87F0C6DCEB06AC/",
+          guides: [
+            {
+              pos: 3,
+              title: "Không được đánh các lá 7 8 9"
+            },
+            {
+              pos: 4,
+              title: "Không được đánh các lá 7 8 9"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24"
+            }
+          ]
+        },
+        {
+          id: "2.3", name: "Level 2.3", url: "https://steamusercontent-a.akamaihd.net/ugc/15145851534642029728/86B69D30E940A5F6C7AED56961E20E5F9522DE23/",
+          guides: [
+            {
+              pos: 1,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 3,
+              title: "Không được đánh các lá 4 5 6"
+            },
+            {
+              pos: 4,
+              title: "Không được đánh các lá 7 8 9"
+            },
+            {
+              pos: 6,
+              title: "Không được đánh các lá 10 11 12"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24"
+            }
+          ]
+        },
+        {
+          id: "2.4", name: "Level 2.4", url: "https://steamusercontent-a.akamaihd.net/ugc/9770768207491621603/6287A814B52A47F3292497569FDD04FD3FB34995/",
+          guides: [
+            {
+              pos: 7,
+              title: "Không được mở bài"
+            }
+          ]
+        }
       ]
     },
     {
@@ -187,10 +266,90 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/10587086111790280091/F26006FC74B0641147391B91AD4A48115D4877D0/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/9993798305807766154/267F77114A2A3C9D177A9DDA840723258195E4D8/",
       levels: [
-        { id: "3.1", name: "Level 3.1", url: "https://steamusercontent-a.akamaihd.net/ugc/11525862569977917742/B7AA2B3B1B2B9B877921534563004E51EFBCC6F7/" },
-        { id: "3.2", name: "Level 3.2", url: "https://steamusercontent-a.akamaihd.net/ugc/12207272073620259158/866D8B28B0273D30E67C969D9E046ECBB718DEB9/" },
-        { id: "3.3", name: "Level 3.3", url: "https://steamusercontent-a.akamaihd.net/ugc/10591514710080541563/B694A0C294C5A5B6806D5613DDA1A2B8B66B8F9F/" },
-        { id: "3.4", name: "Level 3.4", url: "https://steamusercontent-a.akamaihd.net/ugc/13461586841218597994/FED77033A3A99785906161BC7D766CD6B643A61F/" }
+        {
+          id: "3.1", name: "Level 3.1", url: "https://steamusercontent-a.akamaihd.net/ugc/11525862569977917742/B7AA2B3B1B2B9B877921534563004E51EFBCC6F7/",
+          guides: [
+            {
+              pos: 2,
+              title: "Lá lớn nhất phải được đánh vào đây"
+            },
+            {
+              pos: 4,
+              title: "Ô này phải có giá trị gần 20 nhất"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "3.2", name: "Level 3.2", url: "https://steamusercontent-a.akamaihd.net/ugc/12207272073620259158/866D8B28B0273D30E67C969D9E046ECBB718DEB9/",
+          guides: [
+            {
+              pos: 3,
+              title: "Lá nhỏ nhất phải dược đánh vào đây"
+            },
+            {
+              pos: 6,
+              title: "Lá nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 4,
+              title: "Lá cuối cùng phải được đánh vào đây"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "3.3", name: "Level 3.3", url: "https://steamusercontent-a.akamaihd.net/ugc/10591514710080541563/B694A0C294C5A5B6806D5613DDA1A2B8B66B8F9F/",
+          guides: [
+            {
+              pos: 1,
+              title: "Lá lớn nhất phải dược đánh vào đây"
+            },
+            {
+              pos: 3,
+              title: "Lá nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 4,
+              title: "Lá đầu tiên và thứ 2 phải được đánh vào đây"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "3.4", name: "Level 3.4", url: "https://steamusercontent-a.akamaihd.net/ugc/13461586841218597994/FED77033A3A99785906161BC7D766CD6B643A61F/",
+          guides: [
+            {
+              pos: 1,
+              title: "Lá đen lớn nhất phải dược đánh vào đây"
+            },
+            {
+              pos: 3,
+              title: "Có đúng 2 lá phải được đánh vào đây"
+            },
+            {
+              pos: 4,
+              title: "Ô này phải có giá trị gần 6 nhất"
+            },
+            {
+              pos: 5,
+              title: "Lá trắng nhỏ nhất phải dược đánh vào đây"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        }
       ]
     },
     {
@@ -202,10 +361,98 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/14906018738597907214/FA7E0D91DA8C5EA34F9324D5089730C2F6E359D5/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/9583469647816950024/7FC484F2A7641A295696BF1877CE331C9F46767B/",
       levels: [
-        { id: "4.1", name: "Level 4.1", url: "https://steamusercontent-a.akamaihd.net/ugc/16444579309301025687/A3275FBFBB379EE5D4230693A13ABA118B7BD313/" },
-        { id: "4.2", name: "Level 4.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10558589716375396552/59611CDEEA19AE22FBA98940AAE29D4209FB5928/" },
-        { id: "4.3", name: "Level 4.3", url: "https://steamusercontent-a.akamaihd.net/ugc/14620381300433252122/B116D4A35A9274E1B6016D2C8D29895D86D02566/" },
-        { id: "4.4", name: "Level 4.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15862743864655057638/41DED24062D0242497ABD6505F684451BAE0DF1D/" }
+        {
+          id: "4.1", name: "Level 4.1", url: "https://steamusercontent-a.akamaihd.net/ugc/16444579309301025687/A3275FBFBB379EE5D4230693A13ABA118B7BD313/",
+          guides: [
+            {
+              pos: 2,
+              title: "Lá đầu tiên phải dược đánh vào đây"
+            },
+            {
+              pos: 5,
+              title: "Có đúng 1 lá phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Người chơi phải đánh từ lá lớn nhất trên tay đến lá nhỏ nhất"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "4.2", name: "Level 4.2", url: "https://steamusercontent-a.akamaihd.net/ugc/10558589716375396552/59611CDEEA19AE22FBA98940AAE29D4209FB5928/",
+          guides: [
+            {
+              pos: 1,
+              title: "Lá lớn nhất phải dược đánh vào đây"
+            },
+            {
+              pos: 6,
+              title: "Lá đầu tiên phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Người chơi phải đánh từ lá nhỏ nhất trên tay đến lá lớn nhất"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "4.3", name: "Level 4.3", url: "https://steamusercontent-a.akamaihd.net/ugc/14620381300433252122/B116D4A35A9274E1B6016D2C8D29895D86D02566/",
+          guides: [
+            {
+              pos: 1,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 3,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 5,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 7,
+              title: "Khi bốc bài lên, người chơi không được sắp xếp lại tay và phải đánh từ trái sang phải"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "4.4", name: "Level 4.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15862743864655057638/41DED24062D0242497ABD6505F684451BAE0DF1D/",
+          guides: [
+            {
+              pos: 3,
+              title: "Ô này phải có giá trị gần 12 nhất"
+            },
+            {
+              pos: 4,
+              title: "Lá nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 5,
+              title: "Lá lớn nhất phải dược đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Khi bốc bài lên, người chơi không được sắp xếp lại tay và phải đánh từ trái sang phải"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        }
       ]
     },
     {
@@ -217,10 +464,90 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/9928243897033159740/9DDD41C6DB5CB44DFADB1322011C1FF52DD870F7/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/12737249636443287020/AB3AF7AA13B38A713686E705CDF6A4E00C89BE4C/",
       levels: [
-        { id: "5.1", name: "Level 5.1", url: "https://steamusercontent-a.akamaihd.net/ugc/16235257271052605664/19E86EE46284433DCD5642E95557E0D210A5CF2F/" },
-        { id: "5.2", name: "Level 5.2", url: "https://steamusercontent-a.akamaihd.net/ugc/12870573118539567545/6542CE775ECCE03B3489DDADB7AFCF60B8206150/" },
-        { id: "5.3", name: "Level 5.3", url: "https://steamusercontent-a.akamaihd.net/ugc/12025694528045916903/51462E13E6F1B5AFBCCB281EEEC1F75BC6F7858A/" },
-        { id: "5.4", name: "Level 5.4", url: "https://steamusercontent-a.akamaihd.net/ugc/12757718271765149734/87BEB2F9D07A7071DBEF88732CADABC31746C169/" }
+        {
+          id: "5.1", name: "Level 5.1", url: "https://steamusercontent-a.akamaihd.net/ugc/16235257271052605664/19E86EE46284433DCD5642E95557E0D210A5CF2F/",
+          guides: [
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "5.2", name: "Level 5.2", url: "https://steamusercontent-a.akamaihd.net/ugc/12870573118539567545/6542CE775ECCE03B3489DDADB7AFCF60B8206150/",
+          guides: [
+            {
+              pos: 4,
+              title: "Ô này phải có giá trị gần 15 nhất"
+            },
+            {
+              pos: 6,
+              title: "Lá nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "5.3", name: "Level 5.3", url: "https://steamusercontent-a.akamaihd.net/ugc/12025694528045916903/51462E13E6F1B5AFBCCB281EEEC1F75BC6F7858A/",
+          guides: [
+            {
+              pos: 1,
+              title: "Lá lớn nhất phải được đánh vào đây"
+            },
+            {
+              pos: 6,
+              title: "Lá nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "5.4", name: "Level 5.4", url: "https://steamusercontent-a.akamaihd.net/ugc/12757718271765149734/87BEB2F9D07A7071DBEF88732CADABC31746C169/",
+          guides: [
+            {
+              pos: 2,
+              title: "Lá thứ 3 phải được đánh vào đây"
+            },
+            {
+              pos: 3,
+              title: "Có đúng 1 lá đen và 1 lá trắng"
+            },
+            {
+              pos: 4,
+              title: "Có đúng 1 lá đen và 1 lá trắng"
+            },
+            {
+              pos: 5,
+              title: "Lá thứ 2 phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        }
       ]
     },
     {
@@ -232,10 +559,90 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/17039095636279151332/9910D49F9BCB0C301061B77A09709CA271990BF5/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/10035995877005405325/32A9FFC99F62FC342BF7CD4A3FEB7876364FB8E2/",
       levels: [
-        { id: "6.1", name: "Level 6.1", url: "https://steamusercontent-a.akamaihd.net/ugc/14291589495058044977/50CA6BC751A8FB3C7735A31657ABDB54B8F4F7F2/" },
-        { id: "6.2", name: "Level 6.2", url: "https://steamusercontent-a.akamaihd.net/ugc/18120938985591900711/DD56AF52EE61EC43BE6B691AE93CC7BBF1DB17DE/" },
-        { id: "6.3", name: "Level 6.3", url: "https://steamusercontent-a.akamaihd.net/ugc/12543330935849795254/7055DBEB8380F6BD43C126F82F98BF23AD46B589/" },
-        { id: "6.4", name: "Level 6.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15670765100291722138/D13C58481B51CF8F7CF889F8782CD2AB3EF29CF9/" }
+        {
+          id: "6.1", name: "Level 6.1", url: "https://steamusercontent-a.akamaihd.net/ugc/14291589495058044977/50CA6BC751A8FB3C7735A31657ABDB54B8F4F7F2/",
+          guides: [
+            {
+              pos: 3,
+              title: "Lá lớn nhất phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá, giá trị của 1 ô được tính bằng hiệu của 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "6.2", name: "Level 6.2", url: "https://steamusercontent-a.akamaihd.net/ugc/18120938985591900711/DD56AF52EE61EC43BE6B691AE93CC7BBF1DB17DE/",
+          guides: [
+            {
+              pos: 4,
+              title: "Không được đánh các lá 1 2 3"
+            },
+            {
+              pos: 5,
+              title: "Có đúng 1 lá đen và 1 lá trắng"
+            },
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá, giá trị của 1 ô được tính bằng hiệu của 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "6.3", name: "Level 6.3", url: "https://steamusercontent-a.akamaihd.net/ugc/12543330935849795254/7055DBEB8380F6BD43C126F82F98BF23AD46B589/",
+          guides: [
+            {
+              pos: 2,
+              title: "Ô này phải có giá trị gần 12 nhất"
+            },
+            {
+              pos: 5,
+              title: "Lá thứ 2 và thú 3 phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá, giá trị của 1 ô được tính bằng hiệu của 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "6.4", name: "Level 6.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15670765100291722138/D13C58481B51CF8F7CF889F8782CD2AB3EF29CF9/",
+          guides: [
+            {
+              pos: 1,
+              title: "Lá trắng nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 2,
+              title: "Ô này phải có giá trị gần 24 nhất"
+            },
+            {
+              pos: 4,
+              title: "Lá đen lớn nhất phải được đánh vào đây"
+            },
+            {
+              pos: 7,
+              title: "Mỗi ô phải có đúng 2 lá, giá trị của 1 ô được tính bằng hiệu của 2 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        }
       ]
     },
     {
@@ -247,10 +654,90 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/15376976337434863150/2E7695FDA25FBBA61B9A0B400879C3AEAC26A447/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/10172050096311081221/B9522629807742112A466AEF2793CC329941956B/",
       levels: [
-        { id: "7.1", name: "Level 7.1", url: "https://steamusercontent-a.akamaihd.net/ugc/12824740814417941728/C233DFDE69A9562F0EB06E26FFDBF55003EE7EF5/" },
-        { id: "7.2", name: "Level 7.2", url: "https://steamusercontent-a.akamaihd.net/ugc/13676744455971127771/DF88B5917F70A080939F2AB2BAF6A9C589057A2D/" },
-        { id: "7.3", name: "Level 7.3", url: "https://steamusercontent-a.akamaihd.net/ugc/13398618883690484413/57173EFA23834F99670F8238472EB848DB928C34/" },
-        { id: "7.4", name: "Level 7.4", url: "https://steamusercontent-a.akamaihd.net/ugc/16939947217815271747/11331B9F4F9AB17C6BB00E4FE963AE3996FCA825/" }
+        {
+          id: "7.1", name: "Level 7.1", url: "https://steamusercontent-a.akamaihd.net/ugc/12824740814417941728/C233DFDE69A9562F0EB06E26FFDBF55003EE7EF5/",
+          guides: [
+            {
+              pos: 1,
+              title: "Đánh vào đây thì phải rút thêm 1 lá"
+            },
+            {
+              pos: 3,
+              title: "Không được đánh các lá 7 8 9"
+            },
+            {
+              pos: 4,
+              title: "Không được đánh các lá 7 8 9"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "7.2", name: "Level 7.2", url: "https://steamusercontent-a.akamaihd.net/ugc/13676744455971127771/DF88B5917F70A080939F2AB2BAF6A9C589057A2D/",
+          guides: [
+            {
+              pos: 3,
+              title: "Đánh vào đây thì phải rút thêm 1 lá"
+            },
+            {
+              pos: 4,
+              title: "Lá cuối cùng phải được đánh vào đây"
+            },
+            {
+              pos: 6,
+              title: "Đánh vào đây thì phải rút thêm 1 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "7.3", name: "Level 7.3", url: "https://steamusercontent-a.akamaihd.net/ugc/13398618883690484413/57173EFA23834F99670F8238472EB848DB928C34/",
+          guides: [
+            {
+              pos: 4,
+              title: "Lá đen lớn nhất và lá trắng nhỏ nhất phải được đánh vào đây"
+            },
+            {
+              pos: 5,
+              title: "Đánh vào đây thì phải rút thêm 1 lá"
+            },
+            {
+              pos: 6,
+              title: "Có đúng 2 lá đen và 2 lá trắng"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "7.4", name: "Level 7.4", url: "https://steamusercontent-a.akamaihd.net/ugc/16939947217815271747/11331B9F4F9AB17C6BB00E4FE963AE3996FCA825/",
+          guides: [
+            {
+              pos: 1,
+              title: "Đánh vào đây thì phải rút thêm 1 lá"
+            },
+            {
+              pos: 3,
+              title: "Đánh vào đây thì phải rút thêm 1 lá"
+            },
+            {
+              pos: 5,
+              title: "Đánh vào đây thì phải rút thêm 1 lá"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        }
       ]
     },
     {
@@ -263,10 +750,112 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/14752502855473050095/19E66FF5535A6E1DF10690138A215DA2D5E086A0/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/10149326474241840215/644E4BFB81A64CF01E7F137CDDE028FC54CE05AB/",
       levels: [
-        { id: "8.1", name: "Level 8.1", url: "https://steamusercontent-a.akamaihd.net/ugc/9611437470663852418/B216C8D23748622481772E25EBFE9B1DCE2562B4/" },
-        { id: "8.2", name: "Level 8.2", url: "https://steamusercontent-a.akamaihd.net/ugc/9850145143649572277/80ECB0911F8E6C4ED779118D691A4E915EE06085/" },
-        { id: "8.3", name: "Level 8.3", url: "https://steamusercontent-a.akamaihd.net/ugc/9927209626888507396/DFB0FD349042DB1EFB6B24E8855ECF4589D8F25F/" },
-        { id: "8.4", name: "Level 8.4", url: "https://steamusercontent-a.akamaihd.net/ugc/17517382117583532714/BD3354D792A17EDAA3BE94EE4138B3E5A90809BC/" }
+        {
+          id: "8.1", name: "Level 8.1", url: "https://steamusercontent-a.akamaihd.net/ugc/9611437470663852418/B216C8D23748622481772E25EBFE9B1DCE2562B4/",
+          guides: [
+            {
+              pos: 2,
+              title: "Không được đánh vào đây"
+            },
+            {
+              pos: 4,
+              title: "Ô này phải có giá trị trong khoảng 16-20"
+            },
+            {
+              pos: 6,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "8.2", name: "Level 8.2", url: "https://steamusercontent-a.akamaihd.net/ugc/9850145143649572277/80ECB0911F8E6C4ED779118D691A4E915EE06085/",
+          guides: [
+            {
+              pos: 1,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 2,
+              title: "Không được đánh vào đây"
+            },
+            {
+              pos: 3,
+              title: "Không được đánh vào đây"
+            },
+            {
+              pos: 4,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 6,
+              title: "Không được đánh vào đây"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "8.3", name: "Level 8.3", url: "https://steamusercontent-a.akamaihd.net/ugc/9927209626888507396/DFB0FD349042DB1EFB6B24E8855ECF4589D8F25F/",
+          guides: [
+            {
+              pos: 1,
+              title: "Có đúng 2 lá được đánh vào đây"
+            },
+
+            {
+              pos: 3,
+              title: "Có đúng 1 lá được đánh vào đây"
+            },
+            {
+              pos: 4,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 5,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 6,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24. Được chọn vị trí kim đồng hồ"
+            }
+          ]
+        },
+        {
+          id: "8.4", name: "Level 8.4", url: "https://steamusercontent-a.akamaihd.net/ugc/17517382117583532714/BD3354D792A17EDAA3BE94EE4138B3E5A90809BC/",
+          guides: [
+            {
+              pos: 1,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+
+            {
+              pos: 2,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 5,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 6,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24"
+            }
+          ]
+        }
       ]
     },
     {
@@ -278,7 +867,32 @@ const TAKE_TIME_DATA = {
       front: "https://steamusercontent-a.akamaihd.net/ugc/11839561899435177992/BC15A4EE328F9E2006BC00506C98BD3E2BFA887B/",
       back: "https://steamusercontent-a.akamaihd.net/ugc/15798326317776591506/21366FA2A3E913018DA92E1D44D5293D4773D71C/",
       levels: [
-        { id: "9.1", name: "Level 9.1", url: "https://steamusercontent-a.akamaihd.net/ugc/17328735450066306026/2150C13402F22FCA1970C5E1425480BD5D8005A6/" },
+        {
+          id: "9.1", name: "Level 9.1", url: "https://steamusercontent-a.akamaihd.net/ugc/17328735450066306026/2150C13402F22FCA1970C5E1425480BD5D8005A6/",
+          guides: [
+            {
+              pos: 1,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+
+            {
+              pos: 2,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 5,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 6,
+              title: "Đánh vào đây sẽ xoay đồng hồ"
+            },
+            {
+              pos: 8,
+              title: "Giới hạn tổng 1 ô là 24"
+            }
+          ]
+        },
         { id: "9.2", name: "Level 9.2", url: "https://steamusercontent-a.akamaihd.net/ugc/11675917358681693593/0C6EAB6D75BBE2E9D07FC1C6B2C66F7A4D30762F/" },
         { id: "9.3", name: "Level 9.3", url: "https://steamusercontent-a.akamaihd.net/ugc/10674890130604616084/58C99D7B5AFB6E1FBA9A58DD8B0DD28AA7F9C5EE/" },
         { id: "9.4", name: "Level 9.4", url: "https://steamusercontent-a.akamaihd.net/ugc/15592390808083619315/2CC6AA643015BE43F0834CCC6C917F691EB22BAD/" }

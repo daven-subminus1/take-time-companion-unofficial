@@ -36,27 +36,9 @@
         <!-- Rendered via JS -->
       </div>
 
-      <!-- Chapter 8 Rotation Action Box (Special mechanic) -->
-      <div class="chapter8-rotation-box" id="chapter8RotationBox">
-        <div>
-          <span style="font-weight:700; color:var(--accent-sun);">🔄 Cơ Chế Xoay (Chapter VIII - Revolution):</span>
-          <span style="font-size:0.8rem; color:var(--text-sub); margin-left:0.3rem;">Xoay 60° (2 cung giờ) theo chiều
-            kim đồng hồ khi đặt bài vào cung xoay</span>
-        </div>
-        <div class="rotate-btn-group">
-          <button class="btn-rotate" onclick="rotateBoard(-60)">↺ -60°</button>
-          <button class="btn-rotate" onclick="rotateBoard(60)">↻ +60°</button>
-          <button class="btn-rotate" onclick="resetRotation()"
-            style="background:rgba(255,255,255,0.08); border-color:var(--border-glass); color:var(--text-sub);">⟲ Về
-            0°</button>
-        </div>
-      </div>
-
       <!-- Interactive Clock Board (100vw on mobile) -->
       <div class="board-stage-full" id="boardStage">
-        <div class="rotation-indicator-overlay" id="rotationIndicatorOverlay">
-          🔄 Xoay: <span id="rotationOverlayText">0°</span>
-        </div>
+
 
         <div class="board-image-wrapper" id="boardImageWrapper">
           <img id="boardImage" class="board-image" src="" alt="Clock Board">
@@ -65,12 +47,6 @@
 
       <!-- Level Specific Rules & Field Guide -->
       <section class="level-guide-card" id="levelGuideCard" style="display:none;">
-        <div class="level-guide-header">
-          <div class="level-guide-badge">
-            <span>📋</span> Chỉ Dẫn Màn Chơi
-          </div>
-          <span id="levelGuideName" class="level-guide-name">Level 1.1</span>
-        </div>
         <div class="level-guide-list" id="levelGuideList">
           <!-- Rendered dynamically via JS -->
         </div>
